@@ -71,8 +71,9 @@ Last Updated: 2025-11-04
 - **Real-time state synchronization** - Custom implementation
 
 **Authentication:**
-- **Auth0** or **Clerk** - Third-party authentication service
-- **JWT** - Token-based authentication
+- **Supabase Auth** - Built-in authentication with social providers
+- **JWT** - Token-based authentication (handled by Supabase)
+- **Row Level Security (RLS)** - PostgreSQL-native access control
 
 **Deployment:**
 - **Vercel** - Frontend hosting (React apps)
@@ -121,7 +122,7 @@ A group of friends at a gathering collaborates to define a universe (cyberpunk, 
 ### Core Features (6-Week MVP)
 
 **1. User Management**
-- Authentication via Auth0/Clerk (Google/Apple login)
+- Authentication via Supabase Auth (Google/Apple/GitHub login)
 - User profiles
 - Access control and permissions
 
@@ -171,7 +172,7 @@ A group of friends at a gathering collaborates to define a universe (cyberpunk, 
 
 ```
 Frontend (React + TypeScript)
-├── Authentication (Auth0)
+├── Authentication (Supabase Auth SDK)
 ├── UI Components (Tailwind CSS)
 ├── State Management (Context API + hooks)
 ├── Real-time Client (WebSocket)
