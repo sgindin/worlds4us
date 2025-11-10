@@ -450,11 +450,16 @@ npm run dev
    - CSS: `display: flex; align-items: center;`
 
 **Day 1 Checkpoint:**
-- [ ] Development environment set up
-- [ ] Understand HTML semantic structure
-- [ ] Can use Tailwind utilities for layout
-- [ ] Built responsive landing page
-- [ ] Comfortable with Flexbox and Grid via Tailwind
+- [x] Development environment set up
+- [x] Understand HTML semantic structure
+- [x] Can use Tailwind utilities for layout
+- [x] Built responsive landing page
+- [x] Comfortable with Flexbox and Grid via Tailwind
+
+**Date Completed:** November 4, 2025
+**Projects:**
+- worldbuilding-frontend landing page
+- flexbox-demo.html interactive playground
 
 **Resources:**
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
@@ -3588,7 +3593,7 @@ or
 
 | Day | Date | Topics Covered | Projects Built | Hours | Notes |
 |-----|------|----------------|----------------|-------|-------|
-| 1   |      |                |                |       |       |
+| 1   | Nov 4, 2025 | HTML5, CSS/Tailwind, Flexbox, Vite setup | Landing page, Flexbox demo | 4-6 | Complete ✅ |
 | 2   |      |                |                |       |       |
 | ... |      |                |                |       |       |
 
@@ -3604,7 +3609,7 @@ or
 ### Skills Checklist
 
 **Frontend:**
-- [ ] HTML/CSS proficiency
+- [x] HTML/CSS proficiency
 - [ ] JavaScript/TypeScript fluency
 - [ ] React component development
 - [ ] State management
