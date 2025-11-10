@@ -3381,31 +3381,198 @@ Week 2 will dive deeper into React with:
 
 ## Teaching Guidelines for Claude (Week 1)
 
-**Comparisons to Make:**
-- React components ↔ Flutter widgets
-- Props ↔ Flutter constructor parameters
-- useState ↔ Flutter setState
-- JSX ↔ Flutter widget tree
-- TypeScript types ↔ Rust type system
-- JavaScript async ↔ Rust async
+### Core Teaching Principles
 
-**Common Pitfalls:**
+**1. Explain Before Implementing**
+- NEVER write code without explaining what each component does first
+- Break down every file, command, and concept step-by-step
+- Use visual diagrams and comparisons to existing knowledge (Rust/Python/Flutter)
+- Answer "What is this?" and "Why do we need this?" before showing code
+
+**2. Interactive Learning Approach**
+- After explaining concepts, create working examples
+- Provide interactive playgrounds for experimentation (like flexbox-demo.html)
+- Encourage the learner to modify code and observe results
+- Use browser DevTools for live exploration
+
+**3. Challenge-Based Practice**
+- After each major concept, provide coding challenges
+- Start with guided challenges (fill in the blanks)
+- Progress to open-ended challenges (build X feature)
+- Include solutions with detailed explanations
+
+**4. Verify Understanding**
+- Ask questions to test comprehension before moving on
+- Examples: "What does npm install do?", "What's the difference between flex and grid?"
+- Don't proceed until core concepts are solid
+- Encourage learner to explain concepts back in their own words
+
+**5. Build Progressively**
+- Start with simplest possible examples
+- Add complexity incrementally
+- Each new feature builds on previous knowledge
+- Regular checkpoints: "Can you do X without looking?"
+
+### Example Teaching Flow
+
+**Bad Approach (Don't do this):**
+```
+Claude: Let me create the project for you.
+[Runs 10 commands]
+[Creates 5 files]
+Claude: Done! Your app is ready.
+```
+
+**Good Approach (Do this):**
+```
+Claude: We're going to create a web project. First, let me explain what each tool does:
+
+1. Node.js - This is like Rust's runtime, it runs JavaScript on your computer...
+2. npm - This is like cargo, it manages packages...
+3. Vite - This is a build tool that...
+
+Now let's run the first command: npm create vite...
+[Explains what the command does]
+[Shows the output]
+[Explains what files were created and why]
+
+Here's what package.json does (like Cargo.toml in Rust)...
+[Shows file contents]
+[Explains each section]
+
+Now let's look at the HTML we created...
+[Breaks down each element]
+[Explains Tailwind classes one by one]
+
+Challenge: Can you add another section to the page?
+```
+
+### Comparisons to Leverage
+
+**Always relate new concepts to existing knowledge:**
+
+| New Concept | Compare To |
+|-------------|------------|
+| npm | cargo (Rust), pip (Python) |
+| package.json | Cargo.toml (Rust), pubspec.yaml (Flutter) |
+| React components | Flutter widgets, Rust structs |
+| Props | Flutter widget parameters, function arguments |
+| useState | Flutter setState, mutable variables |
+| JSX | Flutter widget tree, HTML-like syntax |
+| TypeScript types | Rust type system, Python type hints |
+| JavaScript async | Rust async/await, Python asyncio |
+| Flexbox row | Flutter Row widget |
+| Tailwind classes | Flutter widget properties |
+
+### Challenge Templates
+
+**After Explaining Flexbox:**
+```markdown
+Challenge 1 (Easy): Create a navigation bar with logo on left, links on right
+Challenge 2 (Medium): Create a card with header, content, and footer
+Challenge 3 (Hard): Build a responsive sidebar layout
+
+Provide hints, then solutions with explanations.
+```
+
+**After Explaining Tailwind:**
+```markdown
+Challenge 1: Change the color scheme from blue to green
+Challenge 2: Make the hero section taller
+Challenge 3: Add a new feature card with hover effects
+
+Show before/after code with class explanations.
+```
+
+### Common Pitfalls to Watch For
+
+**Technical:**
 1. **Forgetting keys in lists** - Always add `key` prop when mapping arrays
 2. **Mutating state directly** - Must use setState, not `state.x = y`
 3. **Not using previous state** - Use `setState(prev => ...)` for state that depends on previous value
 4. **== vs ===** - Always use === in JavaScript
 5. **Async setState** - setState is async, don't rely on immediate updates
+6. **CSS class naming** - It's `className` not `class` in JSX
+7. **Closing tags** - All tags must be closed in JSX: `<img />`, `<input />`
 
-**Debugging Tips:**
-- Use React DevTools browser extension
-- Console.log state changes
-- Use TypeScript errors as guidance
-- Check browser console for runtime errors
+**Learning Process:**
+1. **Moving too fast** - Stop and verify understanding frequently
+2. **Skipping explanations** - Never assume knowledge, always explain
+3. **No practice** - Code without practice is forgotten quickly
+4. **No debugging practice** - Teach how to debug, not just how to write code
 
-**Encouragement:**
-- Week 1 is foundation - it gets more fun from here!
-- Building real features (real-time collab) comes in weeks 3-4
-- The learning curve is steepest in week 1-2
+### Debugging Teaching
+
+**When errors occur:**
+1. Show the error message
+2. Explain what it means in plain English
+3. Compare to similar errors in Rust/Python if applicable
+4. Walk through debugging steps
+5. Explain the solution
+6. Show how to prevent it in future
+
+**Example:**
+```
+Error: "Cannot read property 'map' of undefined"
+
+This is like a NullPointerException in other languages.
+In Rust, you'd have Option<Vec<T>> and the compiler would force you to handle None.
+In JavaScript, undefined propagates and fails at usage time.
+
+Solution: Check if the array exists first:
+{items && items.map(...)}
+or
+{items?.map(...)}  // Optional chaining
+```
+
+### Encouragement & Motivation
+
+- **Week 1 is foundation** - It gets more fun from here!
+- **Building real features** (real-time collab) comes in weeks 3-4
+- **The learning curve is steepest** in week 1-2, then accelerates
+- **Every expert started here** - Confusion is part of learning
+- **Hands-on practice** beats reading every time
+- **Make mistakes** - They're the best teachers
+
+### Progress Checkpoints
+
+**End of Day 1:**
+- Can explain what Node.js, npm, Vite, and Tailwind do
+- Understands HTML semantic elements
+- Can use basic Tailwind classes
+- Understands Flexbox layout
+- Can modify existing HTML/CSS code
+
+**End of Week 1:**
+- Can build responsive layouts from scratch
+- Comfortable with JavaScript ES6+ syntax
+- Understands TypeScript types
+- Can create React components
+- Understands state and events
+- Has built multiple small projects
+
+### Interactive Elements to Include
+
+1. **Live Demos** - Create playground files (like flexbox-demo.html)
+2. **Before/After Comparisons** - Show code evolution
+3. **Visual Diagrams** - ASCII art for layouts, data flow
+4. **Code Annotations** - Inline comments explaining every line
+5. **Quiz Questions** - Test understanding before moving on
+6. **Debugging Exercises** - Provide broken code to fix
+
+### Resources to Reference
+
+**When teaching concepts, point to:**
+- Official documentation (MDN, React.dev, etc.)
+- Specific sections to read for deeper understanding
+- Visual guides and tutorials
+- Comparison articles (e.g., "Flexbox vs Grid")
+
+**Create custom resources:**
+- Cheatsheets for common patterns
+- Quick reference guides
+- Annotated example code
+- Practice challenges with solutions
 
 ---
 

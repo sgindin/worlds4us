@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Playground</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white p-8">
+  <h1 class="text-3xl font-bold mb-8">Flexbox Playground</h1>
+
+  <!-- Example 1: Basic Flex Row -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold mb-4">1. Basic Flex Row</h2>
+    <div class="flex bg-gray-800 p-4 rounded-lg">
+      <div class="bg-blue-600 p-4 rounded">Item A</div>
+      <div class="bg-green-600 p-4 rounded">Item B</div>
+      <div class="bg-red-600 p-4 rounded">Item C</div>
+    </div>
+    <code class="block mt-2 text-sm text-gray-400">class="flex"</code>
+  </section>
+
+  <!-- Example 2: Flex with Spacing -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold mb-4">2. Flex with Spacing</h2>
+    <div class="flex space-x-4 bg-gray-800 p-4 rounded-lg">
+      <div class="bg-blue-600 p-4 rounded">Item A</div>
+      <div class="bg-green-600 p-4 rounded">Item B</div>
+      <div class="bg-red-600 p-4 rounded">Item C</div>
+    </div>
+    <code class="block mt-2 text-sm text-gray-400">class="flex space-x-4"</code>
+  </section>
+
+  <!-- Example 3: Justify Content -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold mb-4">3. Justify Content Variations</h2>
+
+    <div class="space-y-4">
+      <div>
+        <p class="text-sm mb-2 text-gray-400">justify-start (default)</p>
+        <div class="flex justify-start bg-gray-800 p-4 rounded-lg">
+          <div class="bg-blue-600 p-4 rounded">A</div>
+          <div class="bg-green-600 p-4 rounded">B</div>
+          <div class="bg-red-600 p-4 rounded">C</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-sm mb-2 text-gray-400">justify-center</p>
+        <div class="flex justify-center bg-gray-800 p-4 rounded-lg">
+          <div class="bg-blue-600 p-4 rounded">A</div>
+          <div class="bg-green-600 p-4 rounded">B</div>
+          <div class="bg-red-600 p-4 rounded">C</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-sm mb-2 text-gray-400">justify-end</p>
+        <div class="flex justify-end bg-gray-800 p-4 rounded-lg">
+          <div class="bg-blue-600 p-4 rounded">A</div>
+          <div class="bg-green-600 p-4 rounded">B</div>
+          <div class="bg-red-600 p-4 rounded">C</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-sm mb-2 text-gray-400">justify-between</p>
+        <div class="flex justify-between bg-gray-800 p-4 rounded-lg">
+          <div class="bg-blue-600 p-4 rounded">A</div>
+          <div class="bg-green-600 p-4 rounded">B</div>
+          <div class="bg-red-600 p-4 rounded">C</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-sm mb-2 text-gray-400">justify-around</p>
+        <div class="flex justify-around bg-gray-800 p-4 rounded-lg">
+          <div class="bg-blue-600 p-4 rounded">A</div>
+          <div class="bg-green-600 p-4 rounded">B</div>
+          <div class="bg-red-600 p-4 rounded">C</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-sm mb-2 text-gray-400">justify-evenly</p>
+        <div class="flex justify-evenly bg-gray-800 p-4 rounded-lg">
+          <div class="bg-blue-600 p-4 rounded">A</div>
+          <div class="bg-green-600 p-4 rounded">B</div>
+          <div class="bg-red-600 p-4 rounded">C</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Example 4: Align Items -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold mb-4">4. Align Items (Cross Axis)</h2>
+
+    <div class="space-y-4">
+      <div>
+        <p class="text-sm mb-2 text-gray-400">items-start</p>
+        <div class="flex items-start bg-gray-800 p-4 rounded-lg h-32">
+          <div class="bg-blue-600 p-4 rounded">A</div>
+          <div class="bg-green-600 p-8 rounded">B (tall)</div>
+          <div class="bg-red-600 p-4 rounded">C</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-sm mb-2 text-gray-400">items-center</p>
+        <div class="flex items-center bg-gray-800 p-4 rounded-lg h-32">
+          <div class="bg-blue-600 p-4 rounded">A</div>
+          <div class="bg-green-600 p-8 rounded">B (tall)</div>
+          <div class="bg-red-600 p-4 rounded">C</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-sm mb-2 text-gray-400">items-end</p>
+        <div class="flex items-end bg-gray-800 p-4 rounded-lg h-32">
+          <div class="bg-blue-600 p-4 rounded">A</div>
+          <div class="bg-green-600 p-8 rounded">B (tall)</div>
+          <div class="bg-red-600 p-4 rounded">C</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-sm mb-2 text-gray-400">items-stretch</p>
+        <div class="flex items-stretch bg-gray-800 p-4 rounded-lg h-32">
+          <div class="bg-blue-600 p-4 rounded">A</div>
+          <div class="bg-green-600 p-8 rounded">B (tall)</div>
+          <div class="bg-red-600 p-4 rounded">C</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Example 5: Flex Direction -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold mb-4">5. Flex Direction</h2>
+
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <p class="text-sm mb-2 text-gray-400">flex-row (default)</p>
+        <div class="flex flex-row bg-gray-800 p-4 rounded-lg">
+          <div class="bg-blue-600 p-4 rounded">A</div>
+          <div class="bg-green-600 p-4 rounded">B</div>
+          <div class="bg-red-600 p-4 rounded">C</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-sm mb-2 text-gray-400">flex-col</p>
+        <div class="flex flex-col bg-gray-800 p-4 rounded-lg">
+          <div class="bg-blue-600 p-4 rounded mb-2">A</div>
+          <div class="bg-green-600 p-4 rounded mb-2">B</div>
+          <div class="bg-red-600 p-4 rounded">C</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Example 6: Flex Grow -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold mb-4">6. Flex Grow (flex-1)</h2>
+    <div class="flex bg-gray-800 p-4 rounded-lg space-x-4">
+      <div class="flex-none bg-blue-600 p-4 rounded w-32">Fixed (flex-none)</div>
+      <div class="flex-1 bg-green-600 p-4 rounded">Grows (flex-1)</div>
+      <div class="flex-none bg-red-600 p-4 rounded w-32">Fixed (flex-none)</div>
+    </div>
+    <code class="block mt-2 text-sm text-gray-400">
+      Middle item has flex-1 and fills remaining space
+    </code>
+  </section>
+
+  <!-- Example 7: Perfect Centering -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold mb-4">7. Perfect Centering</h2>
+    <div class="flex items-center justify-center bg-gray-800 rounded-lg h-48">
+      <div class="bg-purple-600 p-6 rounded-lg">
+        <p class="text-xl">I'm perfectly centered!</p>
+      </div>
+    </div>
+    <code class="block mt-2 text-sm text-gray-400">
+      class="flex items-center justify-center"
+    </code>
+  </section>
+
+  <!-- Example 8: Navbar Pattern -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold mb-4">8. Navigation Bar Pattern</h2>
+    <nav class="flex items-center justify-between bg-gray-800 p-4 rounded-lg">
+      <h1 class="text-xl font-bold">Logo</h1>
+      <ul class="flex space-x-6">
+        <li><a href="#" class="hover:text-blue-400">Home</a></li>
+        <li><a href="#" class="hover:text-blue-400">About</a></li>
+        <li><a href="#" class="hover:text-blue-400">Contact</a></li>
+      </ul>
+    </nav>
+    <code class="block mt-2 text-sm text-gray-400">
+      class="flex items-center justify-between"
+    </code>
+  </section>
+
+  <!-- Example 9: Flex Wrap -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold mb-4">9. Flex Wrap (resize window to see effect)</h2>
+    <div class="flex flex-wrap gap-4 bg-gray-800 p-4 rounded-lg">
+      <div class="bg-blue-600 p-4 rounded w-32">Item 1</div>
+      <div class="bg-green-600 p-4 rounded w-32">Item 2</div>
+      <div class="bg-red-600 p-4 rounded w-32">Item 3</div>
+      <div class="bg-yellow-600 p-4 rounded w-32">Item 4</div>
+      <div class="bg-purple-600 p-4 rounded w-32">Item 5</div>
+      <div class="bg-pink-600 p-4 rounded w-32">Item 6</div>
+    </div>
+    <code class="block mt-2 text-sm text-gray-400">
+      class="flex flex-wrap gap-4" - Items wrap to next line when there's no space
+    </code>
+  </section>
+
+  <!-- Challenge Section -->
+  <section class="mb-12 bg-gradient-to-r from-blue-900/50 to-purple-900/50 p-8 rounded-2xl">
+    <h2 class="text-2xl font-bold mb-4">🎯 Challenge: Build This Layout</h2>
+    <p class="mb-4 text-gray-300">Try to recreate this card layout using Flexbox:</p>
+
+    <!-- Target layout -->
+    <div class="bg-gray-800 rounded-lg overflow-hidden max-w-md">
+      <div class="h-32 bg-gradient-to-r from-blue-500 to-purple-500"></div>
+      <div class="p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold">Card Title</h3>
+          <span class="bg-blue-600 px-3 py-1 rounded-full text-sm">New</span>
+        </div>
+        <p class="text-gray-300 mb-4">
+          This is a description of the card content. Notice how the elements are arranged.
+        </p>
+        <div class="flex justify-between items-center">
+          <span class="text-gray-400 text-sm">2 hours ago</span>
+          <div class="flex space-x-2">
+            <button class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded">View</button>
+            <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded">Edit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <details class="mt-6">
+      <summary class="cursor-pointer text-blue-400 hover:text-blue-300">Show Solution</summary>
+      <pre class="mt-4 bg-gray-900 p-4 rounded text-sm overflow-x-auto">
+&lt;div class="bg-gray-800 rounded-lg overflow-hidden"&gt;
+  &lt;div class="h-32 bg-gradient-to-r from-blue-500 to-purple-500"&gt;&lt;/div&gt;
+  &lt;div class="p-6"&gt;
+    &lt;div class="flex items-center justify-between mb-4"&gt;
+      &lt;h3 class="text-xl font-bold"&gt;Card Title&lt;/h3&gt;
+      &lt;span class="bg-blue-600 px-3 py-1 rounded-full text-sm"&gt;New&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;p class="text-gray-300 mb-4"&gt;Description...&lt;/p&gt;
+    &lt;div class="flex justify-between items-center"&gt;
+      &lt;span class="text-gray-400 text-sm"&gt;2 hours ago&lt;/span&gt;
+      &lt;div class="flex space-x-2"&gt;
+        &lt;button class="bg-gray-700 px-4 py-2 rounded"&gt;View&lt;/button&gt;
+        &lt;button class="bg-blue-600 px-4 py-2 rounded"&gt;Edit&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+    </details>
+  </section>
+
+  <footer class="text-center text-gray-400 mt-16">
+    <p>Experiment by changing the Flexbox classes in your browser's DevTools!</p>
+    <p class="text-sm mt-2">Right-click any element → Inspect → Edit classes</p>
+  </footer>
+</body>
+</html>
