@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid Playground</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white p-8">
+  <h1 class="text-3xl font-bold mb-8">CSS Grid Playground</h1>
+
+  <!-- Example 1: Basic Grid -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold mb-4">1. Basic Grid - 3 Columns</h2>
+    <div class="grid grid-cols-3 gap-4 bg-gray-800 p-4 rounded-lg">
+      <div class="bg-blue-600 p-4 rounded text-center">1</div>
+      <div class="bg-green-600 p-4 rounded text-center">2</div>
+      <div class="bg-red-600 p-4 rounded text-center">3</div>
+      <div class="bg-purple-600 p-4 rounded text-center">4</div>
+      <div class="bg-yellow-600 p-4 rounded text-center">5</div>
+      <div class="bg-pink-600 p-4 rounded text-center">6</div>
+    </div>
+    <code class="block mt-2 text-sm text-gray-400">class="grid grid-cols-3 gap-4"</code>
+  </section>
+
+  <!-- Example 2: Responsive Grid -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold mb-4">2. Responsive Grid (Resize Window!)</h2>
+    <p class="text-gray-400 text-sm mb-4">1 column on mobile → 2 on tablet → 4 on desktop</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 bg-gray-800 p-4 rounded-lg">
+      <div class="bg-blue-600 p-4 rounded text-center">Card 1</div>
+      <div class="bg-green-600 p-4 rounded text-center">Card 2</div>
+      <div class="bg-red-600 p-4 rounded text-center">Card 3</div>
+      <div class="bg-purple-600 p-4 rounded text-center">Card 4</div>
+      <div class="bg-yellow-600 p-4 rounded text-center">Card 5</div>
+      <div class="bg-pink-600 p-4 rounded text-center">Card 6</div>
+      <div class="bg-cyan-600 p-4 rounded text-center">Card 7</div>
+      <div class="bg-orange-600 p-4 rounded text-center">Card 8</div>
+    </div>
+    <code class="block mt-2 text-sm text-gray-400">class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"</code>
+  </section>
+
+  <!-- Example 3: Column Spanning -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold mb-4">3. Column Spanning</h2>
+    <div class="grid grid-cols-3 gap-4 bg-gray-800 p-4 rounded-lg">
+      <div class="col-span-2 bg-blue-600 p-4 rounded text-center">Spans 2 columns (col-span-2)</div>
+      <div class="bg-green-600 p-4 rounded text-center">1 col</div>
+      <div class="bg-red-600 p-4 rounded text-center">1 col</div>
+      <div class="bg-purple-600 p-4 rounded text-center">1 col</div>
+      <div class="bg-yellow-600 p-4 rounded text-center">1 col</div>
+      <div class="col-span-3 bg-pink-600 p-4 rounded text-center">Spans all 3 columns (col-span-3)</div>
+    </div>
+    <code class="block mt-2 text-sm text-gray-400">col-span-2 takes 2 columns, col-span-3 takes all 3</code>
+  </section>
+
+  <!-- Example 4: 12-Column Grid System -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold mb-4">4. 12-Column Grid System (Like Bootstrap)</h2>
+    <div class="grid grid-cols-12 gap-4 bg-gray-800 p-4 rounded-lg">
+      <!-- Sidebar + Main -->
+      <div class="col-span-3 bg-blue-600 p-4 rounded">
+        <p class="font-bold mb-2">Sidebar</p>
+        <p class="text-sm">col-span-3</p>
+        <p class="text-xs text-gray-300">(3/12 = 25%)</p>
+      </div>
+      <div class="col-span-9 bg-green-600 p-4 rounded">
+        <p class="font-bold mb-2">Main Content</p>
+        <p class="text-sm">col-span-9</p>
+        <p class="text-xs text-gray-300">(9/12 = 75%)</p>
+      </div>
+
+      <!-- Three equal columns -->
+      <div class="col-span-4 bg-red-600 p-4 rounded text-center">
+        col-span-4<br><span class="text-xs">(33.3%)</span>
+      </div>
+      <div class="col-span-4 bg-purple-600 p-4 rounded text-center">
+        col-span-4<br><span class="text-xs">(33.3%)</span>
+      </div>
+      <div class="col-span-4 bg-yellow-600 p-4 rounded text-center">
+        col-span-4<br><span class="text-xs">(33.3%)</span>
+      </div>
+
+      <!-- Two equal columns -->
+      <div class="col-span-6 bg-pink-600 p-4 rounded text-center">
+        col-span-6<br><span class="text-xs">(50%)</span>
+      </div>
+      <div class="col-span-6 bg-cyan-600 p-4 rounded text-center">
+        col-span-6<br><span class="text-xs">(50%)</span>
+      </div>
+
+      <!-- Full width -->
+      <div class="col-span-12 bg-orange-600 p-4 rounded text-center">
+        col-span-12 - Full Width<br><span class="text-xs">(100%)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Example 5: Gap Variations -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold mb-4">5. Different Gap Sizes</h2>
+    <div class="space-y-6">
+      <div>
+        <p class="text-sm text-gray-400 mb-2">gap-2 (0.5rem / 8px)</p>
+        <div class="grid grid-cols-4 gap-2 bg-gray-800 p-4 rounded-lg">
+          <div class="bg-blue-600 p-2 rounded text-xs text-center">1</div>
+          <div class="bg-blue-600 p-2 rounded text-xs text-center">2</div>
+          <div class="bg-blue-600 p-2 rounded text-xs text-center">3</div>
+          <div class="bg-blue-600 p-2 rounded text-xs text-center">4</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-sm text-gray-400 mb-2">gap-8 (2rem / 32px)</p>
+        <div class="grid grid-cols-4 gap-8 bg-gray-800 p-4 rounded-lg">
+          <div class="bg-green-600 p-2 rounded text-xs text-center">1</div>
+          <div class="bg-green-600 p-2 rounded text-xs text-center">2</div>
+          <div class="bg-green-600 p-2 rounded text-xs text-center">3</div>
+          <div class="bg-green-600 p-2 rounded text-xs text-center">4</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Example 6: Universe Cards Grid -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold mb-4">6. Real Example: Universe Cards</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <article class="bg-gray-800 rounded-lg overflow-hidden hover:shadow-xl hover:shadow-blue-500/20 transition">
+        <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+          <span class="text-6xl">🌌</span>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-xl font-bold">Cyberpunk 2199</h3>
+            <span class="px-3 py-1 bg-cyan-600 rounded text-sm">Cyberpunk</span>
+          </div>
+          <p class="text-gray-300 mb-4 line-clamp-3">
+            A dystopian future where AI has achieved consciousness and governs humanity.
+          </p>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-400">12 characters</span>
+            <button class="px-3 py-1 text-blue-400 hover:text-blue-300">View</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="bg-gray-800 rounded-lg overflow-hidden hover:shadow-xl hover:shadow-purple-500/20 transition">
+        <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+          <span class="text-6xl">🏰</span>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-xl font-bold">Fantasy Realm</h3>
+            <span class="px-3 py-1 bg-purple-600 rounded text-sm">Fantasy</span>
+          </div>
+          <p class="text-gray-300 mb-4 line-clamp-3">
+            A magical world where dragons soar and wizards wield ancient powers.
+          </p>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-400">8 characters</span>
+            <button class="px-3 py-1 text-blue-400 hover:text-blue-300">View</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="bg-gray-800 rounded-lg overflow-hidden hover:shadow-xl hover:shadow-green-500/20 transition">
+        <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
+          <span class="text-6xl">🌿</span>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-xl font-bold">Post-Apocalyptic Earth</h3>
+            <span class="px-3 py-1 bg-orange-600 rounded text-sm">Post-Apoc</span>
+          </div>
+          <p class="text-gray-300 mb-4 line-clamp-3">
+            Nature reclaims the ruins of civilization after the great collapse.
+          </p>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-400">15 characters</span>
+            <button class="px-3 py-1 text-blue-400 hover:text-blue-300">View</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="bg-gray-800 rounded-lg overflow-hidden hover:shadow-xl hover:shadow-red-500/20 transition">
+        <div class="h-48 bg-gradient-to-br from-red-500 to-orange-600 flex items-center justify-center">
+          <span class="text-6xl">👻</span>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-xl font-bold">Gothic Horror</h3>
+            <span class="px-3 py-1 bg-red-600 rounded text-sm">Horror</span>
+          </div>
+          <p class="text-gray-300 mb-4 line-clamp-3">
+            Dark tales of vampires, ghosts, and things that lurk in shadows.
+          </p>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-400">6 characters</span>
+            <button class="px-3 py-1 text-blue-400 hover:text-blue-300">View</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="bg-gray-800 rounded-lg overflow-hidden hover:shadow-xl hover:shadow-yellow-500/20 transition">
+        <div class="h-48 bg-gradient-to-br from-yellow-500 to-amber-600 flex items-center justify-center">
+          <span class="text-6xl">🏛️</span>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-xl font-bold">Ancient Rome</h3>
+            <span class="px-3 py-1 bg-yellow-600 rounded text-sm">Historical</span>
+          </div>
+          <p class="text-gray-300 mb-4 line-clamp-3">
+            The glory and intrigue of the Roman Empire at its height.
+          </p>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-400">10 characters</span>
+            <button class="px-3 py-1 text-blue-400 hover:text-blue-300">View</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="bg-gray-800 rounded-lg overflow-hidden hover:shadow-xl hover:shadow-indigo-500/20 transition">
+        <div class="h-48 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+          <span class="text-6xl">🚀</span>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-xl font-bold">Space Exploration</h3>
+            <span class="px-3 py-1 bg-blue-600 rounded text-sm">Sci-Fi</span>
+          </div>
+          <p class="text-gray-300 mb-4 line-clamp-3">
+            Humanity ventures into the stars, discovering new worlds and alien civilizations.
+          </p>
+          <div class="flex justify-between items-center">
+            <span class="text-sm text-gray-400">20 characters</span>
+            <button class="px-3 py-1 text-blue-400 hover:text-blue-300">View</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Example 7: Dashboard Layout -->
+  <section class="mb-12">
+    <h2 class="text-xl font-bold mb-4">7. Complex Dashboard Layout</h2>
+    <div class="grid grid-cols-12 gap-4 bg-gray-800 p-4 rounded-lg min-h-[400px]">
+      <!-- Sidebar -->
+      <aside class="col-span-3 bg-gray-700 rounded-lg p-4">
+        <h3 class="font-bold mb-4">Sidebar</h3>
+        <ul class="space-y-2">
+          <li class="p-2 bg-gray-600 rounded">Dashboard</li>
+          <li class="p-2 hover:bg-gray-600 rounded cursor-pointer">Universes</li>
+          <li class="p-2 hover:bg-gray-600 rounded cursor-pointer">Characters</li>
+          <li class="p-2 hover:bg-gray-600 rounded cursor-pointer">Plots</li>
+        </ul>
+      </aside>
+
+      <!-- Main content area -->
+      <main class="col-span-9">
+        <!-- Header -->
+        <header class="col-span-full bg-gray-700 rounded-lg p-4 mb-4">
+          <h2 class="text-2xl font-bold">Dashboard</h2>
+        </header>
+
+        <!-- Stats grid (nested grid!) -->
+        <div class="grid grid-cols-3 gap-4 mb-4">
+          <div class="bg-blue-600 rounded-lg p-4">
+            <div class="text-3xl font-bold">12</div>
+            <div class="text-sm">Universes</div>
+          </div>
+          <div class="bg-green-600 rounded-lg p-4">
+            <div class="text-3xl font-bold">45</div>
+            <div class="text-sm">Characters</div>
+          </div>
+          <div class="bg-purple-600 rounded-lg p-4">
+            <div class="text-3xl font-bold">23</div>
+            <div class="text-sm">Stories</div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="bg-gray-700 rounded-lg p-6">
+          <h3 class="font-bold mb-2">Recent Activity</h3>
+          <p class="text-gray-300">Your latest worldbuilding updates will appear here...</p>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <!-- Challenge Section -->
+  <section class="mb-12 bg-gradient-to-r from-blue-900/50 to-purple-900/50 p-8 rounded-2xl">
+    <h2 class="text-2xl font-bold mb-4">🎯 Challenge: Build This Layout</h2>
+    <p class="mb-4 text-gray-300">Try to recreate this magazine-style layout using Grid:</p>
+
+    <!-- Target layout -->
+    <div class="grid grid-cols-4 gap-4 max-w-4xl">
+      <article class="col-span-2 row-span-2 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg p-6 flex items-end">
+        <div>
+          <h3 class="text-2xl font-bold mb-2">Featured Story</h3>
+          <p class="text-sm">Large featured card spans 2 columns and 2 rows</p>
+        </div>
+      </article>
+
+      <article class="bg-gray-700 rounded-lg p-4">
+        <h4 class="font-bold">Story 2</h4>
+        <p class="text-xs text-gray-300">Regular card</p>
+      </article>
+
+      <article class="bg-gray-700 rounded-lg p-4">
+        <h4 class="font-bold">Story 3</h4>
+        <p class="text-xs text-gray-300">Regular card</p>
+      </article>
+
+      <article class="bg-gray-700 rounded-lg p-4">
+        <h4 class="font-bold">Story 4</h4>
+        <p class="text-xs text-gray-300">Regular card</p>
+      </article>
+
+      <article class="bg-gray-700 rounded-lg p-4">
+        <h4 class="font-bold">Story 5</h4>
+        <p class="text-xs text-gray-300">Regular card</p>
+      </article>
+    </div>
+
+    <details class="mt-6">
+      <summary class="cursor-pointer text-blue-400 hover:text-blue-300">Show Solution</summary>
+      <pre class="mt-4 bg-gray-900 p-4 rounded text-sm overflow-x-auto">
+&lt;div class="grid grid-cols-4 gap-4"&gt;
+  &lt;!-- Featured: spans 2 columns and 2 rows --&gt;
+  &lt;article class="col-span-2 row-span-2"&gt;
+    Featured Story
+  &lt;/article&gt;
+
+  &lt;!-- Regular cards (1 column, 1 row each) --&gt;
+  &lt;article&gt;Story 2&lt;/article&gt;
+  &lt;article&gt;Story 3&lt;/article&gt;
+  &lt;article&gt;Story 4&lt;/article&gt;
+  &lt;article&gt;Story 5&lt;/article&gt;
+&lt;/div&gt;</pre>
+    </details>
+  </section>
+
+  <footer class="text-center text-gray-400 mt-16">
+    <p>Experiment by changing grid-cols-* and col-span-* values!</p>
+    <p class="text-sm mt-2">Right-click → Inspect → Edit classes in DevTools</p>
+  </footer>
+</body>
+</html>

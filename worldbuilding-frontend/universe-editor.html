@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universe Editor - Cyberpunk 2199</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Top Navigation (Flexbox, Sticky) -->
+    <nav class="bg-gray-800 border-b border-gray-700 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Left: Logo and nav links -->
+                <div class="flex items-center space-x-8">
+                    <h1 class="text-xl font-bold">Worldbuilding</h1>
+                    <!-- Desktop nav links (hidden on mobile) -->
+                    <div class="hidden md:flex space-x-4">
+                        <a href="#" class="px-3 py-2 rounded hover:bg-gray-700 transition">Dashboard</a>
+                        <a href="#" class="px-3 py-2 rounded bg-gray-700">Universes</a>
+                        <a href="#" class="px-3 py-2 rounded hover:bg-gray-700 transition">Characters</a>
+                    </div>
+                </div>
+
+                <!-- Right: Actions -->
+                <button class="px-4 py-2 bg-blue-600 rounded hover:bg-blue-700 transition font-bold">
+                    New Universe
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Layout: Flexbox container for sidebar + content -->
+    <div class="flex h-[calc(100vh-4rem)]">
+
+        <!-- Left Sidebar: Hidden on mobile (< 1024px), visible on desktop -->
+        <aside class="hidden lg:block w-64 bg-gray-800 border-r border-gray-700 overflow-y-auto">
+            <div class="p-4">
+                <h3 class="text-lg font-bold mb-4">Current Universe</h3>
+
+                <!-- Navigation menu -->
+                <nav class="space-y-2">
+                    <a href="#" class="block p-3 bg-gray-700 rounded font-medium">
+                        📋 Overview
+                    </a>
+                    <a href="#" class="block p-3 hover:bg-gray-700 rounded transition">
+                        👥 Characters
+                    </a>
+                    <a href="#" class="block p-3 hover:bg-gray-700 rounded transition">
+                        📖 Plots
+                    </a>
+                    <a href="#" class="block p-3 hover:bg-gray-700 rounded transition">
+                        🎨 Assets
+                    </a>
+                    <a href="#" class="block p-3 hover:bg-gray-700 rounded transition">
+                        ⚙️ Settings
+                    </a>
+                </nav>
+
+                <!-- Recent Activity -->
+                <div class="mt-8">
+                    <h4 class="text-sm font-bold text-gray-400 mb-3">RECENT ACTIVITY</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="p-2 bg-gray-700 rounded">
+                            <p class="text-xs text-gray-400">2 hours ago</p>
+                            <p>Added character "Jane"</p>
+                        </div>
+                        <div class="p-2 bg-gray-700 rounded">
+                            <p class="text-xs text-gray-400">Yesterday</p>
+                            <p>Updated description</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area: Scrollable -->
+        <main class="flex-1 overflow-y-auto p-4 md:p-8">
+            <div class="max-w-5xl mx-auto">
+
+                <!-- Header Section -->
+                <div class="mb-8">
+                    <h2 class="text-4xl font-bold mb-3">Cyberpunk 2199</h2>
+                    <div class="flex flex-wrap items-center gap-3 mb-4">
+                        <span class="px-3 py-1 bg-cyan-600 rounded-full text-sm font-bold">Cyberpunk</span>
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">12 Characters</span>
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">5 Plots</span>
+                        <span class="px-3 py-1 bg-green-900 text-green-300 rounded-full text-sm">✓ Active</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded font-bold transition">
+                            Edit Details
+                        </button>
+                        <button class="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded font-bold transition">
+                            Share
+                        </button>
+                        <button class="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded font-bold transition">
+                            Export
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Grid: Description and Details side-by-side on desktop -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+
+                    <!-- Description: Takes 2 columns on large screens -->
+                    <div class="lg:col-span-2 bg-gray-800 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-4">Description</h3>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            A dystopian future where artificial intelligence has achieved consciousness
+                            and now governs humanity through a complex network of interconnected systems.
+                            The megacities are divided into layers: the gleaming upper districts where
+                            the elite live in comfort, and the sprawling undercity where most of humanity
+                            struggles to survive.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Hackers, rebels, and rogue AIs work in the shadows, trying to bring down
+                            the system or carve out their own piece of freedom in a world where privacy
+                            is extinct and every action is monitored.
+                        </p>
+                    </div>
+
+                    <!-- Details: Takes 1 column -->
+                    <div class="bg-gray-800 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-4">Details</h3>
+                        <dl class="space-y-3">
+                            <div>
+                                <dt class="text-sm text-gray-400 mb-1">Created</dt>
+                                <dd class="font-medium">January 15, 2025</dd>
+                            </div>
+                            <div>
+                                <dt class="text-sm text-gray-400 mb-1">Last Modified</dt>
+                                <dd class="font-medium">2 hours ago</dd>
+                            </div>
+                            <div>
+                                <dt class="text-sm text-gray-400 mb-1">Creator</dt>
+                                <dd class="font-medium">Alice</dd>
+                            </div>
+                            <div>
+                                <dt class="text-sm text-gray-400 mb-1">Collaborators</dt>
+                                <dd class="font-medium">3 active</dd>
+                            </div>
+                            <div>
+                                <dt class="text-sm text-gray-400 mb-1">Technology Level</dt>
+                                <dd class="font-medium">9/10 (Advanced)</dd>
+                            </div>
+                            <div>
+                                <dt class="text-sm text-gray-400 mb-1">Magic System</dt>
+                                <dd class="font-medium">None</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+
+                <!-- Stats Grid: 4 columns on desktop, 2 on tablet, 1 on mobile -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                    <div class="bg-gradient-to-br from-blue-900 to-blue-800 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold mb-2">12</div>
+                        <div class="text-sm text-blue-200">Characters</div>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-900 to-purple-800 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold mb-2">5</div>
+                        <div class="text-sm text-purple-200">Plots</div>
+                    </div>
+                    <div class="bg-gradient-to-br from-green-900 to-green-800 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold mb-2">8</div>
+                        <div class="text-sm text-green-200">Stories</div>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-900 to-orange-800 rounded-lg p-6 text-center">
+                        <div class="text-3xl font-bold mb-2">23</div>
+                        <div class="text-sm text-orange-200">Assets</div>
+                    </div>
+                </div>
+
+                <!-- Characters Section -->
+                <div class="mb-8">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-2xl font-bold">Characters</h3>
+                        <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded font-bold transition">
+                            + Add Character
+                        </button>
+                    </div>
+
+                    <!-- Character Cards: Responsive grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                        <!-- Character Card 1 -->
+                        <div class="bg-gray-800 rounded-lg overflow-hidden hover:ring-2 hover:ring-blue-500 transition cursor-pointer">
+                            <!-- Character header with avatar -->
+                            <div class="h-32 bg-gradient-to-br from-cyan-600 to-blue-700 flex items-center justify-center">
+                                <div class="w-20 h-20 bg-gray-900 rounded-full flex items-center justify-center text-3xl font-bold">
+                                    JD
+                                </div>
+                            </div>
+
+                            <!-- Character info -->
+                            <div class="p-4">
+                                <h4 class="font-bold text-lg mb-1">John Doe</h4>
+                                <p class="text-sm text-cyan-400 mb-3">Protagonist • Hacker</p>
+                                <p class="text-sm text-gray-400 mb-3">
+                                    A skilled hacker fighting against the AI overlords...
+                                </p>
+                                <div class="flex justify-between items-center text-xs text-gray-500">
+                                    <span>Age: 28</span>
+                                    <span>3 plots</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Character Card 2 -->
+                        <div class="bg-gray-800 rounded-lg overflow-hidden hover:ring-2 hover:ring-purple-500 transition cursor-pointer">
+                            <div class="h-32 bg-gradient-to-br from-purple-600 to-pink-700 flex items-center justify-center">
+                                <div class="w-20 h-20 bg-gray-900 rounded-full flex items-center justify-center text-3xl font-bold">
+                                    ZR
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-lg mb-1">Zara Reeves</h4>
+                                <p class="text-sm text-purple-400 mb-3">Antagonist • AI Agent</p>
+                                <p class="text-sm text-gray-400 mb-3">
+                                    A rogue AI agent hunting down resistance members...
+                                </p>
+                                <div class="flex justify-between items-center text-xs text-gray-500">
+                                    <span>Age: N/A</span>
+                                    <span>2 plots</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Character Card 3 -->
+                        <div class="bg-gray-800 rounded-lg overflow-hidden hover:ring-2 hover:ring-green-500 transition cursor-pointer">
+                            <div class="h-32 bg-gradient-to-br from-green-600 to-teal-700 flex items-center justify-center">
+                                <div class="w-20 h-20 bg-gray-900 rounded-full flex items-center justify-center text-3xl font-bold">
+                                    MC
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-lg mb-1">Marcus Chen</h4>
+                                <p class="text-sm text-green-400 mb-3">Supporting • Engineer</p>
+                                <p class="text-sm text-gray-400 mb-3">
+                                    Hardware specialist who helps the resistance...
+                                </p>
+                                <div class="flex justify-between items-center text-xs text-gray-500">
+                                    <span>Age: 35</span>
+                                    <span>4 plots</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Character Card 4 -->
+                        <div class="bg-gray-800 rounded-lg overflow-hidden hover:ring-2 hover:ring-yellow-500 transition cursor-pointer">
+                            <div class="h-32 bg-gradient-to-br from-yellow-600 to-orange-700 flex items-center justify-center">
+                                <div class="w-20 h-20 bg-gray-900 rounded-full flex items-center justify-center text-3xl font-bold">
+                                    LK
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-lg mb-1">Luna Kim</h4>
+                                <p class="text-sm text-yellow-400 mb-3">Supporting • Netrunner</p>
+                                <p class="text-sm text-gray-400 mb-3">
+                                    Expert in navigating the digital realm...
+                                </p>
+                                <div class="flex justify-between items-center text-xs text-gray-500">
+                                    <span>Age: 24</span>
+                                    <span>3 plots</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Character Card 5 -->
+                        <div class="bg-gray-800 rounded-lg overflow-hidden hover:ring-2 hover:ring-red-500 transition cursor-pointer">
+                            <div class="h-32 bg-gradient-to-br from-red-600 to-rose-700 flex items-center justify-center">
+                                <div class="w-20 h-20 bg-gray-900 rounded-full flex items-center justify-center text-3xl font-bold">
+                                    VB
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-lg mb-1">Viktor Black</h4>
+                                <p class="text-sm text-red-400 mb-3">Antagonist • Corporate</p>
+                                <p class="text-sm text-gray-400 mb-3">
+                                    CEO of a mega-corporation controlling the AI...
+                                </p>
+                                <div class="flex justify-between items-center text-xs text-gray-500">
+                                    <span>Age: 52</span>
+                                    <span>2 plots</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Character Card 6 -->
+                        <div class="bg-gray-800 rounded-lg overflow-hidden hover:ring-2 hover:ring-indigo-500 transition cursor-pointer">
+                            <div class="h-32 bg-gradient-to-br from-indigo-600 to-violet-700 flex items-center justify-center">
+                                <div class="w-20 h-20 bg-gray-900 rounded-full flex items-center justify-center text-3xl font-bold">
+                                    AS
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-lg mb-1">Aria Santos</h4>
+                                <p class="text-sm text-indigo-400 mb-3">Supporting • Medic</p>
+                                <p class="text-sm text-gray-400 mb-3">
+                                    Underground doctor treating resistance fighters...
+                                </p>
+                                <div class="flex justify-between items-center text-xs text-gray-500">
+                                    <span>Age: 31</span>
+                                    <span>2 plots</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Right Sidebar: Only visible on extra-large screens (1280px+) -->
+        <aside class="hidden xl:block w-64 bg-gray-800 border-l border-gray-700 p-4 overflow-y-auto">
+            <h3 class="font-bold mb-4">Online Now</h3>
+
+            <!-- Online users list -->
+            <div class="space-y-3">
+                <div class="flex items-center space-x-3">
+                    <div class="relative">
+                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center font-bold">
+                            A
+                        </div>
+                        <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-gray-800"></div>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium">Alice</p>
+                        <p class="text-xs text-gray-400">Editing characters</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <div class="relative">
+                        <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center font-bold">
+                            B
+                        </div>
+                        <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-gray-800"></div>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium">Bob</p>
+                        <p class="text-xs text-gray-400">Viewing overview</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <div class="relative">
+                        <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center font-bold">
+                            C
+                        </div>
+                        <div class="absolute bottom-0 right-0 w-3 h-3 bg-yellow-500 rounded-full border-2 border-gray-800"></div>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium">Carol</p>
+                        <p class="text-xs text-gray-400">Away</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Changes -->
+            <div class="mt-8">
+                <h4 class="font-bold mb-3">Recent Changes</h4>
+                <div class="space-y-3 text-sm">
+                    <div class="pb-3 border-b border-gray-700">
+                        <p class="text-xs text-gray-400 mb-1">5 min ago</p>
+                        <p><span class="text-blue-400">Alice</span> updated John Doe</p>
+                    </div>
+                    <div class="pb-3 border-b border-gray-700">
+                        <p class="text-xs text-gray-400 mb-1">15 min ago</p>
+                        <p><span class="text-purple-400">Bob</span> added new plot</p>
+                    </div>
+                    <div class="pb-3 border-b border-gray-700">
+                        <p class="text-xs text-gray-400 mb-1">1 hour ago</p>
+                        <p><span class="text-blue-400">Alice</span> created Viktor Black</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collaborators -->
+            <div class="mt-8">
+                <h4 class="font-bold mb-3">Collaborators (3)</h4>
+                <div class="space-y-2 text-sm">
+                    <div class="flex items-center justify-between">
+                        <span>Alice</span>
+                        <span class="text-xs text-gray-400 bg-gray-700 px-2 py-1 rounded">Admin</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span>Bob</span>
+                        <span class="text-xs text-gray-400 bg-gray-700 px-2 py-1 rounded">Write</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span>Carol</span>
+                        <span class="text-xs text-gray-400 bg-gray-700 px-2 py-1 rounded">Read</span>
+                    </div>
+                </div>
+                <button class="w-full mt-3 px-3 py-2 bg-gray-700 hover:bg-gray-600 rounded text-sm font-bold transition">
+                    Invite More
+                </button>
+            </div>
+        </aside>
+
+    </div>
+
+</body>
+</html>
